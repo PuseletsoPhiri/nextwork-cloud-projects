@@ -121,6 +121,46 @@ An alternative to ACLs is bucket policies, which are rules that determine who is
 
 My bucket policy prevents anyone from deleting the file. I tested this by trying to delete the 'index.html' file and saw a 'failed to delete objects' error
 
+## Challenge: Adding CloudFront to My Website
+### What I did in this challenge
+
+In this challenge, I went off-script to add Amazon CloudFront in front of my S3 website on my own. I’m doing this so that my website loads faster for people around the world and is served over HTTPS instead of the plain HTTP that the S3 bucket endpoint uses
+
+### Understanding CloudFront
+
+CloudFront is AWS’s content delivery network '(CDN)'. It copies '(caches)' my website files and stores them in edge locations, which are data centers all around the world. Instead of every visitor fetching 'index.html' from my bucket in Cape Town, they get it from the edge location closest to them. This reduces latency and reduces the number of requests that hit my S3 bucket directly
+
+### How I set it up
+
+To set up CloudFront, I created a new distribution and used my S3 bucket’s static website endpoint as the origin. I set the origin protocol policy to HTTP only '(because S3 website endpoints don’t support HTTPS)', set the viewer protocol policy to redirect HTTP to HTTPS, and set 'index.html' as the default root object. Then I waited for the distribution status to change from Deploying to Deployed
+
+<img width="1861" height="667" alt="Screenshot 2026-10-29 165638" src="https://github.com/user-attachments/assets/41b75cb1-c41e-43b9-b389-24c17120b40d" />
+
+### The error I ran into
+
+When I first visited my CloudFront domain name '(d12c45l3txux5y.cloudfront.net)', I got a 403 error instead of my website. This was confusing because my website was already loading fine from the S3 bucket endpoint, so I knew the website files themselves were working. That told me the problem was in how CloudFront was connecting to my bucket and not in the bucket itself
+
+<img width="1176" height="448" alt="Screenshot 2026-10-29 162109" src="https://github.com/user-attachments/assets/00cb7244-a83f-470b-b828-52f37e1aef09" />
+
+### How I resolved the error
+
+To resolve the 403 error, I changed the origin domain from the regular S3 endpoint '(http://nextwork-website-puseletso.s3-website.af-south-1.amazonaws.com)' to the website endpoint '(nextwork-website-puseletso.s3-website.af-south-1.amazonaws.com)' then changed the origin protocol policy to HTTP only and set index.html as the default root object. CloudFront also caches error responses, so I created an invalidation for /* to clear the cached 403 and make CloudFront fetch my files again. After that and waiting a minute or two, I refreshed the page and my website loaded
+
+<img width="1303" height="517" alt="Screenshot 2026-10-29 170455" src="https://github.com/user-attachments/assets/6c2de3b4-1aba-4432-8552-91606e432d8f" />
+
+<img width="1878" height="301" alt="Screenshot 2026-10-29 170324" src="https://github.com/user-attachments/assets/1a2f520c-8b24-4138-8d46-b9e0ef7868a9" />
+
+## What I saw when I tested it
+
+Once the distribution was deployed and the cache was cleared, I visited the CloudFront domain name and my website loaded over 'HTTPS', with the padlock showing in the browser. This is the same website as the S3 endpoint, but now it is served securely from an edge location close to the visitor
+
+<img width="1891" height="961" alt="Screenshot 2026-10-29 170651" src="https://github.com/user-attachments/assets/13a4ba4a-b777-4d1d-b7f2-198d0ede289b" />
+
+
+## Challenges and wins
+
+The most challenging part was working out why I got a 403 on CloudFront when the S3 website was working fine. I learnt that there are two types of S3 endpoints, that CloudFront has to talk to the website endpoint over HTTP, and that CloudFront caches errors, so fixing the cause isn’t enough without an invalidation. It was most rewarding to see my website being served from a secure CloudFront URL, knowing that this is much closer to how real websites are hosted in production
+
 ---
 
 *Built with [NextWork](https://nextwork.ai) - [View this project](https://nextwork.ai/projects/70e2d059-31ab-5f67-8c58-f5edbd451140)*
