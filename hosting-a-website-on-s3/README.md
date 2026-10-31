@@ -33,15 +33,15 @@ In this step, I will open S3 and create storage for my website files
 
 ### How long it took to create the bucket
 
-Creating an S3 bucket took me... less than 7 minutes. I needed to learn a few concepts like blocked access and ACLs, but once that learning is done, I can create buckets in a shorter time in the future
+Creating an S3 bucket took me less than 7 minutes. I needed to learn a few concepts like blocked access and ACLs, but once that learning is done, I can create buckets in a shorter time in the future
 
 ### Region selection
 
-The region I picked for my S3 bucket was Cape Town... because it is the closest region to me. It is best practice to pick a region closest to you to reduce latency (time to retrieve data) and costs
+The region I picked for my S3 bucket was Cape Town because it is the closest region to me. It is best practice to pick a region closest to you to reduce latency (time to retrieve data) and costs
 
 ### Understanding bucket name uniqueness
 
-S3 bucket names are globally unique! This means... no two Amazon buckets in the entire world can have the same name; they have to be unique regardless of a region or AWS account ID
+S3 bucket names are globally unique! This means no two Amazon buckets in the entire world can have the same name; they have to be unique regardless of a region or AWS account ID
 
 ![Image](https://nextwork.ai/exuberant_purple_zany_armadillo/uploads/70e2d059-31ab-5f67-8c58-f5edbd451140_ba6d42ad)
 
@@ -57,7 +57,7 @@ I uploaded two files to my S3 bucket – they were index.html, which holds the s
 
 ### How the files work together
 
-Both files are necessary for this project, as the index.html determines the structure, but the structure alone doesn't illustrate the content of the website, i.e., if the index.html says 'insert an image here', it might not have the actual image to display; you would need to supply the image separately. That's why i have multiple files uploaded separately
+Both files are necessary for this project, as the index.html determines the structure, but the structure alone doesn't illustrate the content of the website, i.e., if the index.html says `insert an image here`, it might not have the actual image to display; you would need to supply the image separately. That's why i have multiple files uploaded separately
 
 ![Image](https://nextwork.ai/exuberant_purple_zany_armadillo/uploads/70e2d059-31ab-5f67-8c58-f5edbd451140_a265af88)
 
@@ -73,11 +73,11 @@ Website hosting means uploading my website files on a web server, which is a spe
 
 ### How I enabled website hosting
 
-To enable website hosting with my S3 bucket, I went to the properties tab and enabled static website hosting, and I labelled the index document 'index.html'.
+To enable website hosting with my S3 bucket, I went to the properties tab and enabled static website hosting, and I labelled the index document `index.html`.
 
 ### Access Control Lists (ACLs)
 
-An ACL is... a way to configure permissions settings inside a bucket. I enabled ACL so that I can control access to my website files later. I've kept it enabled to learn how ACLs work and compare it with bucket policies later
+An ACL is a way to configure permissions settings inside a bucket. I enabled ACL so that I can control access to my website files later. I've kept it enabled to learn how ACLs work and compare it with bucket policies later
 
 ![Image](https://nextwork.ai/exuberant_purple_zany_armadillo/uploads/70e2d059-31ab-5f67-8c58-f5edbd451140_c22c54c0)
 
@@ -128,17 +128,17 @@ In this challenge, I went off-script to add Amazon CloudFront in front of my S3 
 
 ### Understanding CloudFront
 
-CloudFront is AWS’s content delivery network '(CDN)'. It copies '(caches)' my website files and stores them in edge locations, which are data centers all around the world. Instead of every visitor fetching 'index.html' from my bucket in Cape Town, they get it from the edge location closest to them. This reduces latency and reduces the number of requests that hit my S3 bucket directly
+CloudFront is AWS’s content delivery network `(CDN)`. It copies `(caches)` my website files and stores them in edge locations, which are data centers all around the world. Instead of every visitor fetching `index.html` from my bucket in Cape Town, they get it from the edge location closest to them. This reduces latency and reduces the number of requests that hit my S3 bucket directly
 
 ### How I set it up
 
-To set up CloudFront, I created a new distribution and used my S3 bucket’s static website endpoint as the origin. I set the origin protocol policy to HTTP only '(because S3 website endpoints don’t support HTTPS)', set the viewer protocol policy to redirect HTTP to HTTPS, and set 'index.html' as the default root object. Then I waited for the distribution status to change from Deploying to Deployed
+To set up CloudFront, I created a new distribution and used my S3 bucket’s static website endpoint as the origin. I set the origin protocol policy to HTTP only `(because S3 website endpoints don’t support HTTPS)`, set the viewer protocol policy to redirect HTTP to HTTPS, and set 'index.html' as the default root object. Then I waited for the distribution status to change from Deploying to Deployed
 
 <img width="1861" height="667" alt="Screenshot 2026-10-29 165638" src="https://github.com/user-attachments/assets/41b75cb1-c41e-43b9-b389-24c17120b40d" />
 
 ### The error I ran into
 
-When I first visited my CloudFront domain name '(d12c45l3txux5y.cloudfront.net)', I got a 403 error instead of my website. This was confusing because my website was already loading fine from the S3 bucket endpoint, so I knew the website files themselves were working. That told me the problem was in how CloudFront was connecting to my bucket and not in the bucket itself
+When I first visited my CloudFront domain name `(d12c45l3txux5y.cloudfront.net)`, I got a 403 error instead of my website. This was confusing because my website was already loading fine from the S3 bucket endpoint, so I knew the website files themselves were working. That told me the problem was in how CloudFront was connecting to my bucket and not in the bucket itself
 
 <img width="1176" height="448" alt="Screenshot 2026-10-29 162109" src="https://github.com/user-attachments/assets/00cb7244-a83f-470b-b828-52f37e1aef09" />
 
@@ -152,7 +152,7 @@ To resolve the 403 error, I changed the origin domain from the regular S3 endpoi
 
 ## What I saw when I tested it
 
-Once the distribution was deployed and the cache was cleared, I visited the CloudFront domain name and my website loaded over 'HTTPS', with the padlock showing in the browser. This is the same website as the S3 endpoint, but now it is served securely from an edge location close to the visitor
+Once the distribution was deployed and the cache was cleared, I visited the CloudFront domain name and my website loaded over `HTTPS`, with the padlock showing in the browser. This is the same website as the S3 endpoint, but now it is served securely from an edge location close to the visitor
 
 <img width="1891" height="961" alt="Screenshot 2026-10-29 170651" src="https://github.com/user-attachments/assets/13a4ba4a-b777-4d1d-b7f2-198d0ede289b" />
 
