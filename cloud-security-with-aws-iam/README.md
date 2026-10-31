@@ -37,7 +37,7 @@ Tags are organisational tools that let us label our resources; they are helpful 
 
 ### My tag configuration
 
-The tag I’ve used on my EC2 instances is called 'env', which stands for 'environment'. The value I’ve assigned for my instances is production and development
+The tag I’ve used on my EC2 instances is called `env`, which stands for `environment`. The value I’ve assigned for my instances is production and development
 
 ![Image](https://nextwork.ai/exuberant_purple_zany_armadillo/uploads/51a5fd24-7458-58a6-8653-9b90119a0e4a_2e0e5a5d)
 
