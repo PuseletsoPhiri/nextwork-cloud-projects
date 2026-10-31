@@ -144,7 +144,7 @@ When I first visited my CloudFront domain name `(d12c45l3txux5y.cloudfront.net)`
 
 ### How I resolved the error
 
-To resolve the 403 error, I changed the origin domain from the regular S3 endpoint '(http://nextwork-website-puseletso.s3-website.af-south-1.amazonaws.com)' to the website endpoint '(nextwork-website-puseletso.s3-website.af-south-1.amazonaws.com)' then changed the origin protocol policy to HTTP only and set index.html as the default root object. CloudFront also caches error responses, so I created an invalidation for /* to clear the cached 403 and make CloudFront fetch my files again. After that and waiting a minute or two, I refreshed the page and my website loaded
+To resolve the 403 error, I changed the origin domain from the regular S3 endpoint `(http://nextwork-website-puseletso.s3-website.af-south-1.amazonaws.com)` to the website endpoint `(nextwork-website-puseletso.s3-website.af-south-1.amazonaws.com)` then changed the origin protocol policy to HTTP only and set `index.html` as the default root object. CloudFront also caches error responses, so I created an invalidation for /* to clear the cached 403 and make CloudFront fetch my files again. After that and waiting a minute or two, I refreshed the page and my website loaded
 
 <img width="1303" height="517" alt="Screenshot 2026-10-29 170455" src="https://github.com/user-attachments/assets/6c2de3b4-1aba-4432-8552-91606e432d8f" />
 
