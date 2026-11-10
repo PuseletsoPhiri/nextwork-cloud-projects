@@ -1,3 +1,7 @@
+<img src="https://cdn.prod.website-files.com/677c400686e724409a5a7409/6790ad949cf622dc8dcd9fe4_nextwork-logo-leather.svg" alt="NextWork" width="300" />
+
+# BUILD A VPC
+
 ## Introducing Today's Project!
 
 In this project, I will demonstrate how to build the networking backbone of AWS by creating a Virtual Private Cloud (VPC), setting up public subnets, and attaching an internet gateway to enable secure communication between resources. I'm doing this project to learn about traffic rules and security measures to control how resources, like EC2 instances and databases, connect and work together.
