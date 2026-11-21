@@ -1,3 +1,5 @@
+<img src="https://cdn.prod.website-files.com/677c400686e724409a5a7409/6790ad949cf622dc8dcd9fe4_nextwork-logo-leather.svg" alt="NextWork" width="300" />
+
 # NextWork Cloud Projects
 
 Hands-on AWS projects I'm completing through NextWork's **[Cloud Engineer Roadmap](https://nextwork.ai/portfolio/illusionmenon/learnlists/7bcf077e-33d8-5cca-b2b7-c69f43316fb0)**, a 45-project learning path covering the essential skills for a cloud engineer. Each project has its own folder with a README explaining what I built, what went wrong, and what I learned.
@@ -77,4 +79,5 @@ No access keys, passwords, or account credentials are stored in this repository.
 I'm Puseletso Phiri, an IT graduate from South Africa building skills in cloud and AI.
 
 - GitHub: [PuseletsoPhiri](https://github.com/PuseletsoPhiri)
+- NextWork portfolio: [https://nextwork.ai/portfolio/exuberant_purple_zany_armadillo](https://nextwork.ai/portfolio/exuberant_purple_zany_armadillo)
 - Email: khalabiphiri@protonmail.com
