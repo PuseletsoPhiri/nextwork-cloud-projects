@@ -80,4 +80,4 @@ I'm Puseletso Phiri, an IT graduate from South Africa building skills in cloud a
 
 - GitHub: [PuseletsoPhiri](https://github.com/PuseletsoPhiri)
 - NextWork portfolio: [https://nextwork.ai/portfolio/exuberant_purple_zany_armadillo](https://nextwork.ai/portfolio/exuberant_purple_zany_armadillo)
-- Email: khalabiphiri@protonmail.com
+- 💼 [LinkedIn](https://www.linkedin.com/in/puseletso-phiri-705b79b9)
