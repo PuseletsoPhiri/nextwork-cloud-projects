@@ -4,8 +4,7 @@
 
 **Project Link:** [View Project](https://nextwork.ai/projects/70e2d059-31ab-5f67-8c58-f5edbd451140)
 
-**Author:** khalabiphiri@protonmail.com  
-**Email:** khalabiphiri@protonmail.com
+**Author:** 💼 [LinkedIn](https://www.linkedin.com/in/puseletso-phiri-705b79b9)
 
 ---
 
