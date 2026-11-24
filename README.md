@@ -10,7 +10,7 @@ This sits alongside my other portfolios:
 
 ## Progress
 
-**10 of 45 projects complete.** Currently starting the database projects.
+**12 of 45 projects complete.** Currently working on the database projects.
 
 ### Foundations: storage and security
 
@@ -32,14 +32,14 @@ This sits alongside my other portfolios:
 | 10 | [VPC Monitoring with Flow Logs](https://nextwork.ai/projects/6954a600-a89e-56b0-886b-7054da118a3b) | ✅ Done | [Project folder](amazon-vpc/07-vpc-monitoring-flow-logs) |
 | 11 | [Access S3 from a VPC](https://nextwork.ai/projects/36d7dc8f-3a9f-51ff-91ae-662077ea9920) | ✅ Done | [Project folder](amazon-vpc/08-access-s3-from-a-vpc) |
 
-### Databases: currently working on
+### Databases
 
-| # | Project | Status |
-|---|---------|--------|
-| 13 | [Aurora Database with EC2](https://nextwork.ai/projects/cee72c3a-f285-55a6-8217-3cee4023a3bf) | 🔄 In progress |
-| 14 | [Connect a Web App with Aurora](https://nextwork.ai/projects/921d7b78-ffa4-5e41-a5b5-aed76c78efad) | ⬜ Not started |
-| 15 | [Load Data into DynamoDB](https://nextwork.ai/projects/8bd82466-f5ee-569e-9125-2c4c6ce7a07f) | ⬜ Not started |
-| 16 | [Query Data with DynamoDB](https://nextwork.ai/projects/0001cf4c-8256-52ae-b09c-6e99ed36462f) | ⬜ Not started |
+| # | Project | Status | Details |
+|---|---------|--------|---------|
+| 13 | [Aurora Database with EC2](https://nextwork.ai/projects/cee72c3a-f285-55a6-8217-3cee4023a3bf) | ✅ Done | [Project folder](database/01-mysql-database-with-ec2) |
+| 14 | [Connect a Web App with Aurora](https://nextwork.ai/projects/921d7b78-ffa4-5e41-a5b5-aed76c78efad) | ✅ Done | [Project folder](database/02-connecting-a-web-app-with-mysql) |
+| 15 | [Load Data into DynamoDB](https://nextwork.ai/projects/8bd82466-f5ee-569e-9125-2c4c6ce7a07f) | ⬜ Not started | |
+| 16 | [Query Data with DynamoDB](https://nextwork.ai/projects/0001cf4c-8256-52ae-b09c-6e99ed36462f) | ⬜ Not started | |
 
 ## Skills practised so far
 
@@ -48,6 +48,7 @@ This sits alongside my other portfolios:
 | AWS foundations | S3 static website hosting |
 | Identity and access | IAM users, groups, and policies |
 | Networking | VPCs, public and private subnets, VPC traffic flow and security, peering, Flow Logs, S3 access from a VPC |
+| Databases | Setting up a database with EC2 and connecting a web app to it |
 | Troubleshooting | Testing connectivity and tracing traffic between VPC resources |
 
 ## Repository structure
@@ -65,6 +66,9 @@ nextwork-cloud-projects/
 │   └── 08-access-s3-from-a-vpc/
 ├── cloud-security-with-aws-iam/
 │   └── README.md
+├── database/
+│   ├── 01-msql-database-with-ec2/
+│   └── 02-connecting-a-web-app-with-mysql/
 └── hosting-a-website-on-s3/
     └── README.md
 ```
@@ -80,4 +84,4 @@ I'm Puseletso Phiri, an IT graduate from South Africa building skills in cloud a
 
 - GitHub: [PuseletsoPhiri](https://github.com/PuseletsoPhiri)
 - NextWork portfolio: [https://nextwork.ai/portfolio/exuberant_purple_zany_armadillo](https://nextwork.ai/portfolio/exuberant_purple_zany_armadillo)
-- 💼 [LinkedIn](https://www.linkedin.com/in/puseletso-phiri-705b79b9)
+- LinkedIn: [Puseletso Phiri](https://www.linkedin.com/in/puseletso-phiri-705b79b9)
